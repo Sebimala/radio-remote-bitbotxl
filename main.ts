@@ -2,21 +2,28 @@ enum RadioMessage {
     message1 = 49434
 }
 input.onButtonPressed(Button.A, function () {
+    toggleradio()
     radio.sendValue("acc", 100)
     radio.sendValue("dir", 0)
 })
-input.onButtonPressed(Button.AB, function () {
+function toggleradio () {
     if (silencio == 0) {
         silencio = 1
-        radio.sendValue("acc", 0)
-        radio.sendValue("dir", 0)
     } else {
         silencio = 0
     }
-})
-input.onButtonPressed(Button.B, function () {
+}
+input.onButtonPressed(Button.AB, function () {
+    toggleradio()
     radio.sendValue("acc", 0)
     radio.sendValue("dir", 0)
+})
+input.onButtonPressed(Button.B, function () {
+    silencio = 1
+    radio.sendValue("acc", 0)
+    radio.sendValue("dir", 0)
+    basic.pause(1000)
+    silencio = 0
 })
 function update () {
     basic.clearScreen()
