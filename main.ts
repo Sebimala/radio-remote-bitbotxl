@@ -3,7 +3,7 @@ enum RadioMessage {
 }
 input.onButtonPressed(Button.A, function () {
     toggleradio()
-    radio.sendValue("acc", 100)
+    radio.sendValue("acc", -100)
     radio.sendValue("dir", 0)
 })
 function toggleradio () {
