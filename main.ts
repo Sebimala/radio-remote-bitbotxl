@@ -8,6 +8,8 @@ input.onButtonPressed(Button.A, function () {
 input.onButtonPressed(Button.AB, function () {
     if (silencio == 0) {
         silencio = 1
+        radio.sendValue("acc", 0)
+        radio.sendValue("dir", 0)
     } else {
         silencio = 0
     }
