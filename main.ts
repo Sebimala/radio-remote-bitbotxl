@@ -45,6 +45,7 @@ let silencio = 0
 radio.setGroup(69)
 led.setBrightness(128)
 silencio = 0
+let Sensitivity = 5
 basic.showLeds(`
     . . . . .
     . . . . .
@@ -57,19 +58,19 @@ basic.forever(function () {
     ledY = Math.round((input.acceleration(Dimension.Y) + 1023) / 500)
     dir = Math.round(input.acceleration(Dimension.X) / 10)
     acc = Math.round(input.acceleration(Dimension.Y) / 10)
-    if (ledX != ledXold) {
+    if (Math.abs(ledXold - ledX) >= Sensitivity) {
         ledXold = ledX
         update()
     }
-    if (ledY != ledYold) {
+    if (Math.abs(ledYold - ledY) >= Sensitivity) {
         ledYold = ledY
         update()
     }
-    if (acc != accold) {
+    if (Math.abs(accold - acc) >= Sensitivity) {
         accold = acc
         update()
     }
-    if (dir != dirold) {
+    if (Math.abs(dirold - dir) >= Sensitivity) {
         dirold = dir
         update()
     }
