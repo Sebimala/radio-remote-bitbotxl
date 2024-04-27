@@ -42,7 +42,7 @@ let acc = 0
 let ledY = 0
 let ledX = 0
 let silencio = 0
-radio.setGroup(69)
+radio.setGroup(8)
 led.setBrightness(128)
 silencio = 0
 let Sensitivity = 5
