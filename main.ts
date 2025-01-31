@@ -42,6 +42,7 @@ let acc = 0
 let ledY = 0
 let ledX = 0
 let silencio = 0
+joystickbit.initJoystickBit()
 radio.setGroup(8)
 led.setBrightness(128)
 silencio = 0
@@ -54,10 +55,10 @@ basic.showLeds(`
     . . . . .
     `)
 basic.forever(function () {
-    ledX = Math.round((input.acceleration(Dimension.X) + 1023) / 500)
-    ledY = Math.round((input.acceleration(Dimension.Y) + 1023) / 500)
-    dir = Math.round(input.acceleration(Dimension.X) / 10)
-    acc = Math.round(input.acceleration(Dimension.Y) / 10)
+    ledX = Math.round((joystickbit.getRockerValue(joystickbit.rockerType.X) + 500) / 500)
+    ledY = Math.round((joystickbit.getRockerValue(joystickbit.rockerType.Y) + 500) / 500)
+    dir = Math.round(joystickbit.getRockerValue(joystickbit.rockerType.X) / 10)
+    acc = Math.round(joystickbit.getRockerValue(joystickbit.rockerType.Y) / 10)
     if (Math.abs(ledXold - ledX) >= Sensitivity) {
         ledXold = ledX
         update()

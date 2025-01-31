@@ -1,12 +1,13 @@
 {
-    "name": "radio-remote-bitbotxl-v2",
+    "name": "radio-remote-bitbotxl-joystick",
     "description": "",
     "dependencies": {
         "core": "*",
         "radio": "*",
         "microphone": "*",
         "radio-broadcast": "*",
-        "gamerbit": "github:sparkfun/pxt-gamer-bit#v0.0.9"
+        "gamerbit": "github:sparkfun/pxt-gamer-bit#v0.0.9",
+        "joystickbit": "github:tinkertanker/pxt-joystickbit#v1.0.4"
     },
     "files": [
         "main.blocks",
