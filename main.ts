@@ -57,8 +57,8 @@ basic.showLeds(`
 basic.forever(function () {
     ledX = Math.round((joystickbit.getRockerValue(joystickbit.rockerType.X) + 500) / 500)
     ledY = Math.round((joystickbit.getRockerValue(joystickbit.rockerType.Y) + 500) / 500)
-    dir = Math.round(joystickbit.getRockerValue(joystickbit.rockerType.X) / 10)
-    acc = Math.round(joystickbit.getRockerValue(joystickbit.rockerType.Y) / 10)
+    dir = joystickbit.getRockerValue(joystickbit.rockerType.X)
+    acc = joystickbit.getRockerValue(joystickbit.rockerType.Y)
     if (Math.abs(ledXold - ledX) >= Sensitivity) {
         ledXold = ledX
         update()
