@@ -1,11 +1,12 @@
 {
-    "name": "radio-remote-bitbotxl",
+    "name": "radio-remote-bitbotxl-v2",
     "description": "",
     "dependencies": {
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "radio-broadcast": "*"
+        "radio-broadcast": "*",
+        "gamerbit": "github:sparkfun/pxt-gamer-bit#v0.0.9"
     },
     "files": [
         "main.blocks",
@@ -17,7 +18,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "6.0.26",
+        "target": "7.0.57",
         "targetId": "microbit"
     },
     "supportedTargets": [
